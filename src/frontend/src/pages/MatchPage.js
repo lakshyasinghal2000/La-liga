@@ -1,13 +1,14 @@
 import React, { useEffect , useState} from 'react';
 import { MatchDetailCard } from '../components/MatchDetailCard';
 import { useParams } from 'react-router';
-
+import { Link } from 'react-router-dom';
 import { YearSelector } from '../components/YearSelector';
 import './MatchPage.scss';
 export const MatchPage = () => {
 
   const [matches, setMatches] = useState([]);
   const {teamName, year} = useParams();
+  const r = `/teams`;
   useEffect(
     () => {
       const fetchMatches = async() =>{
@@ -27,6 +28,7 @@ export const MatchPage = () => {
       <div className="year-selector">
         <h3> Select Year </h3>
         <YearSelector teamName={teamName} />
+        { <Link to={r}>Homepage{'>'} </Link> }
       </div>
       <div>
       <h1>MatchPage</h1>

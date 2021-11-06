@@ -13,6 +13,7 @@ export const TeamPage = () => {
   // const year = 2021;
   // const otherTeamRoute = `/teams/${teamName}/matches/${2021}`;
   const l = `/teams/${teamName}/matches/${2021}`;
+  const r = `/teams`;
   useEffect(
     () => {
       const fetchMatches = async() =>{
@@ -51,6 +52,9 @@ export const TeamPage = () => {
     
       <div className="more-link">
       { <Link to={l}>More{'>'} </Link> }
+      </div>
+      <div className="more-link">
+      { <Link to={r}>Homepage{'>'} </Link> }
       </div>
     </div>
   );
